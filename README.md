@@ -10,6 +10,7 @@ some function for handle lang for ymc shell lib
 - [x] sh-lib-path-resolve
 - [x] sh-lib-test
 - [x] sh-lib-time-cost
+- [x] sh-lib-project-dir-map
 
 ### prod
 
@@ -60,9 +61,9 @@ lang_step_now "2"
 # get the code
 
 # run test
-./src/test.sh
+./test/index.sh
 #2 get some fail test
-./test.sh | grep "it is false"
+./test/index.sh | grep "it is false"
 ```
 
 ## author
