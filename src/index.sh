@@ -58,6 +58,8 @@ function lang_step_now(){
   local d=
   local t=
   local key=
+  local mode=
+  local ns=
   key="lang"
   t="${lang_step_dic[$key]}"
   [ -z "${t}" ] && t="zh"
@@ -68,8 +70,16 @@ function lang_step_now(){
 
   [ "${2}" ] && d="${2}"
   [ -z "$d" ] && d=${lang_step_dic[$t]}
-   echo "$d" | sed -n "${s}p" # unused global var lang_step_desc
+
+  [ "${3}" ] && mode="${3}"
+  [ -z "$mode" ] && mode=""
+  [ _"$mode" != _ ] && ns=$(echo "$d" | grep "^#*$s")
+  [ _"$ns" != _"" ] && echo "$ns"
+  [ _"$ns" = _"" ] && echo "$d" | sed -n "${s}p" # unused global var lang_step_desc
 }
+#lang_step_now "1"
+#lang_step_now "2.1 " "" "step"
+
 function lang_step_get(){
   lang_step_now "$1" "$2"
 }
