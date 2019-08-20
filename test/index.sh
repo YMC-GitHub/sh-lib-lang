@@ -30,12 +30,13 @@ desc=
 lang_step_set "$desc"
 test 'lang_step_now "1"' ""
 desc=$(cat <<EOF
-# 创建主机地址文件
-# 测试主机是否在线
+#1.1 创建主机地址文件
+#1.2 测试主机是否在线
 EOF
 )
 lang_step_set "$desc"
-test 'lang_step_now "1"' "# 创建主机地址文件"
+test 'lang_step_now "1"' "#1.1 创建主机地址文件"
+test 'lang_step_now "1.1" "" "step_mode"' "#1.1 创建主机地址文件"
 echo "-------test.unit.lang_step_set/get-------"
 echo
 
