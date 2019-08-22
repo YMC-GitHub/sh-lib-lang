@@ -50,29 +50,29 @@ cat src/index.sh |  grep "function " | sed "s/function */- [x] /g"  | sed "s/(.*
 
 # simple usage
 desc=$(cat <<EOF
-# 创建主机地址文件
-# 测试主机是否在线
+#1.1 创建主机地址文件
+#1.2 测试主机是否在线
 EOF
 )
 lang_step_set "$desc" "zh" # or  lang_step_set "$desc" # default lang is zh
 desc=$(cat <<EOF
-# create host ip file
-# ping to check if host is online
+#1.1 create host ip file
+#1.2 ping to check if host is online
 EOF
 )
 lang_step_set "$desc" "en"
 
-lang_step_now "1" # =># 创建主机地址文件
-lang_step_now "2" # =># 测试主机是否在线
+lang_step_now "1" # =>#1.1 创建主机地址文件
+lang_step_now "2" # =>#1.2 测试主机是否在线
 
 lang_type_set "en"
-lang_step_now "1" # => # create host ip file
-lang_step_now "2" # => # ping to check if host is online
+lang_step_now "1" # => #1.1 create host ip file
+lang_step_now "2" # => #1.2 ping to check if host is online
 
 lang_type_set "zh"
-lang_step_now "1" # =># 创建主机地址文件
-lang_step_now "2" # =># 测试主机是否在线
-
+lang_step_now "1" # =>#1.1 创建主机地址文件
+lang_step_now "2" # =>#1.2 测试主机是否在线
+lang_step_now "1.2" "" "step_mode" # =>#1.2 测试主机是否在线
 ```
 
 ### how to use for developer?
