@@ -2,7 +2,7 @@
 
 ## desc
 
-based on v1.0.0
+based on v1.1.0
 
 ## deps
 
@@ -31,3 +31,4 @@ based on v1.0.0
 - [x] set operation step
 - [x] get current step
 - [x] support multi language
+- [x] support step mode
